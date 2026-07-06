@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { getStarters } from "../controllers/pokemon.controller";
+import { addPokemon, getStarters } from "../controllers/pokemon.controller";
 
 const router = Router();
-// localhost:3000/api/pokemon/
+
 router.get("/", getStarters);
+router.post("/", addPokemon);
 
 export default router;
