@@ -6,3 +6,5 @@ const router = Router();
 router.use("/pokemon", pokemonRoutes);
 
 export default router;
+
+
