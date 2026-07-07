@@ -30,6 +30,18 @@ app.use("/api", routes);
 //   process.exit(1);
 // });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+import { connectToMongo } from "./mongodb";
+
+const startServer = async (): Promise<void> => {
+  await connectToMongo();
+
+  const PORT = process.env.PORT ?? 3000;
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+};
+
+startServer().catch((error) => {
+  console.error("Failed to start server:", error);
+  process.exit(1);
 });
