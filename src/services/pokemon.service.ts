@@ -1,8 +1,15 @@
+export interface PokemonType {
+  name: string;
+  color: string;
+
+}
+
 export interface Pokemon {
   id: number;
   name: string;
   image: string;
   dexNumber: string;
+  types: PokemonType[];
 }
 
 export interface CreatePokemonInput {
@@ -14,27 +21,51 @@ export interface CreatePokemonInput {
 const STARTER_POKEMON: Pokemon[] = [
   {
     id: 0,
-    name: "Squirtle",
+    name: "Squirtsssssle",
     image: "https://www.serebii.net/scarletviolet/pokemon/new/small/007.png",
     dexNumber: "007",
+    types: [
+      {
+        name: "water",
+        color: "blue"
+      }
+    ]
   },
   {
     id: 1,
     name: "Squirtle",
     image: "https://www.serebii.net/scarletviolet/pokemon/new/small/007.png",
     dexNumber: "007",
+        types: [
+      {
+        name: "water",
+        color: "blue"
+      }
+    ]
   },
   {
     id: 2,
     name: "Bulbasaur",
     image: "https://www.serebii.net/scarletviolet/pokemon/new/small/001.png",
     dexNumber: "001",
+        types: [
+      {
+        name: "water",
+        color: "blue"
+      }
+    ]
   },
   {
     id: 3,
     name: "Charmander",
     image: "https://www.serebii.net/scarletviolet/pokemon/new/small/004.png",
     dexNumber: "004",
+        types: [
+      {
+        name: "water",
+        color: "blue"
+      }
+    ]
   },
 ];
 
@@ -47,6 +78,12 @@ export const createPokemon = (input: CreatePokemonInput): Pokemon => {
     name: input.name,
     image: input.image,
     dexNumber: input.dexNumber,
+    types: [
+      {
+        name: "water",
+        color: "blue"
+      }
+    ]
   };
 };
 
